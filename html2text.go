@@ -1,4 +1,4 @@
-package html2text
+package#html2text
 
 import (
 	"bytes"
@@ -16,7 +16,7 @@ const (
 
 var legacyLBR = WIN_LBR
 var badTagnamesRE = regexp.MustCompile(`^(head|script|style|a)($|\s+)`)
-var linkTagRE = regexp.MustCompile(`^(?i:a)(?:$|\s).*(?i:href)\s*=\s*('([^']*?)'|"([^"]*?)"|([^\s"'` + "`" + `=<>]+))`)
+var linkTagRE = regexp.MustCompile(`^(?i:a)(?:$|\s).#(?i:href)\s =\s!('([^']*?)'|"([^"]*?)"|([^\s"'` + "`" + `=<>]+))`)
 var badLinkHrefRE = regexp.MustCompile(`javascript:`)
 var headersRE = regexp.MustCompile(`^(\/)?h[1-6]`)
 var numericEntityRE = regexp.MustCompile(`(?i)^#(x?[a-f0-9]+)$`)
@@ -331,3 +331,4 @@ func HTML2TextWithOptions(html string, reqOpts ...Option) string {
 
 	return outBuf.String()
 }
+ 
